@@ -8,7 +8,7 @@ import * as $ from 'jquery' ;
 })
 export class AppComponent implements OnInit {
   title = 'app';
-  isDisabled = true;
+  isDisabled = false;
 
   constructor() { }
 
@@ -16,8 +16,9 @@ export class AppComponent implements OnInit {
     console.log('I\'ve been Initialized');
   }
 
-  buttonClicked(): void {
-    alert('Hello World');
+  disableMe(): void {
+    this.isDisabled = true;
+    console.log('Button clicked');
   }
 
 }
