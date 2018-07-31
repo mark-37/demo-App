@@ -4,5 +4,5 @@
     Welcome to {{ title }}!
   </h1>
 
-  <button class="btn btn-primary" (click)="buttonClicked()">Click me</button>
+  <button [class]='isDisables? "btn btn-primary" : "btn btn-danger"' (click)="buttonClicked()">Click me</button>
 </div>
