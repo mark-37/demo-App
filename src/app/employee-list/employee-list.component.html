@@ -1,0 +1,23 @@
+<table id="table1" class="table table-striped" *ngIf="Employees.length!=0; else errorBlock" >
+  <thead>
+    <tr>
+      <th>Emp_Id</th>
+      <th>Emp_Name</th>
+      <th>Salary</th>
+      <th>Gender</th>
+      <th>DOB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of Employees">
+      <td>{{ emp.code }}</td>
+      <td>{{ emp.name }}</td>
+      <td>{{ emp.annualSalary | currency : 'USD' }}</td>
+      <td>{{ emp.gender }}</td>
+      <td>{{ emp.dateOfBirth }}</td>
+    </tr>
+  </tbody>
+</table>
+<ng-template #errorBlock>
+  <div class="alert alert-danger">No Records Found</div>
+</ng-template>

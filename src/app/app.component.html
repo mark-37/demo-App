@@ -4,7 +4,8 @@
     Welcome to {{ title }}!
   </h1>
 
-  <button 
+  <button
+  
   [className]='isDisabled ? "btn btn-danger" : "btn btn-primary"' 
   [disabled]="isDisabled"
   (click)="disableMe()"
@@ -16,4 +17,5 @@
 
 <div class="container">
   <app-employee></app-employee>
+  <app-list-employee></app-list-employee>
 </div>
