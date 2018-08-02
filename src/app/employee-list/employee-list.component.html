@@ -1,11 +1,8 @@
-<app-employee-count
-[all]='getTotalEmployeesCount()'
-[female]='getTotalFemaleEmployeesCount()'
-[male]='getTotalMaleEmployeesCount()'
->
+<app-employee-count [all]='getTotalEmployeesCount()' [female]='getTotalFemaleEmployeesCount()' [male]='getTotalMaleEmployeesCount()'
+  (countRadioButtonSelectionChanged)='onEmployeeCountRadioButtonChange($event)'>
 </app-employee-count>
 
-<table id="table1" class="table table-striped" *ngIf="Employees.length!=0; else errorBlock" >
+<table id="table1" class="table table-striped" *ngIf="Employees.length!=0; else errorBlock">
   <thead>
     <tr>
       <th>Emp_Id</th>
@@ -16,13 +13,15 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let emp of Employees">
-      <td>{{ emp.code }}</td>
-      <td>{{ emp.name }}</td>
-      <td>{{ emp.annualSalary | currency : 'USD' }}</td>
-      <td>{{ emp.gender }}</td>
-      <td>{{ emp.dateOfBirth }}</td>
-    </tr>
+    <ng-container *ngFor="let emp of Employees">
+      <tr *ngIf="selectedCountRadioButtonValue == 'All' || selectedCountRadioButtonValue == emp.gender">
+        <td>{{ emp.code }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.annualSalary | currency : 'USD' }}</td>
+        <td>{{ emp.gender }}</td>
+        <td>{{ emp.dateOfBirth }}</td>
+      </tr>
+    </ng-container>
   </tbody>
 </table>
 <ng-template #errorBlock>

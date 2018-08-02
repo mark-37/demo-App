@@ -1,7 +1,21 @@
 <h3>Show:</h3>
 
 <div class="radio">
-  <label><input type="radio" name="options" checked>{{ 'All ('+all+')' }}</label>
-  <label><input type="radio" name="options">{{ 'Male ('+male+')' }}</label>
-  <label><input type="radio" name="options">{{ 'Female ('+female+')' }}</label>
+  <label><input type="radio" name="options" checked
+  value="All"
+  [(ngModel)]="selectedRadioButtonValue"
+  (change)="onRadioButtonSelectionChange()" 
+  >{{ 'All ('+all+')' }}</label>
+
+  <label><input type="radio" name="options"
+    value="Male"
+    [(ngModel)]="selectedRadioButtonValue"
+    (change)="onRadioButtonSelectionChange()"
+  >{{ 'Male ('+male+')' }}</label>
+
+  <label><input type="radio" name="options"
+    value="Female"
+    [(ngModel)]="selectedRadioButtonValue"
+    (change)="onRadioButtonSelectionChange()"
+    >{{ 'Female ('+female+')' }}</label>
 </div>

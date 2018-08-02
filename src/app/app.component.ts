@@ -7,7 +7,7 @@ import * as $ from 'jquery' ;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
+  title = 'Enhanced Angular App';
   isDisabled = false;
 
   constructor() { }
