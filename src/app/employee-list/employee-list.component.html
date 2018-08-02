@@ -1,3 +1,10 @@
+<app-employee-count
+[all]='getTotalEmployeesCount()'
+[female]='getTotalFemaleEmployeesCount()'
+[male]='getTotalMaleEmployeesCount()'
+>
+</app-employee-count>
+
 <table id="table1" class="table table-striped" *ngIf="Employees.length!=0; else errorBlock" >
   <thead>
     <tr>
