@@ -19,3 +19,12 @@
   <app-employee></app-employee>
   <app-list-employee></app-list-employee>
 </div>
+
+<div class="container">
+  <p>your text: </p>
+  <input type="text" [(ngModel)]='userText'>
+  <br> <br>
+  <app-simple
+    [simpleInput]='userText'
+  ></app-simple>
+</div>

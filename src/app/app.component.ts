@@ -7,13 +7,16 @@ import * as $ from 'jquery' ;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+
+  userText: string = 'Hello';
+
   title = 'Enhanced Angular App';
   isDisabled = false;
 
   constructor() { }
 
   ngOnInit() {
-    console.log('I\'ve been Initialized');
+
   }
 
   disableMe(): void {
