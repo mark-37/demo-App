@@ -14,7 +14,7 @@
   </thead>
   <tbody>
     <ng-container *ngFor="let emp of Employees">
-      <tr *ngIf="selectedCountRadioButtonValue == 'All' || selectedCountRadioButtonValue == emp.gender">
+      <tr *ngIf="selectedEmployeeCountRadioButtonValue == 'All' || selectedEmployeeCountRadioButtonValue == emp.gender">
         <td>{{ emp.code }}</td>
         <td>{{ emp.name }}</td>
         <td>{{ emp.annualSalary | currency : 'USD' }}</td>

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeListComponent implements OnInit {
 
-  selectedCountRadioButtonValue: string = 'All';
+  selectedEmployeeCountRadioButtonValue: string = 'All';
 
   Employees: any[] = [
     { code: 'emp100', name: 'Arun Jain', gender: 'Male', annualSalary: 1000, dateOfBirth: '16/06/1996' },
@@ -25,7 +25,7 @@ export class EmployeeListComponent implements OnInit {
   }
 
   onEmployeeCountRadioButtonChange(selectedRadioButtonValue: string): void {
-    this.selectedCountRadioButtonValue = selectedRadioButtonValue;
+    this.selectedEmployeeCountRadioButtonValue = selectedRadioButtonValue;
   }
 
   getTotalEmployeesCount(): number {
