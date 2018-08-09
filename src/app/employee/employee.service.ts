@@ -9,7 +9,7 @@ export class EmployeeService {
 
   getEmployees(): IEmployee[] {
   	return [
-  		{ code: 'emp100', name: 'Arun Jain', gender: 'Male', annualSalary: 1000, dateOfBirth: '16/06/1996' },
+  	{ code: 'emp100', name: 'Arun Jain', gender: 'Male', annualSalary: 1000, dateOfBirth: '16/06/1996' },
     { code: 'emp101', name: 'Shaila Kapoor', gender: 'Female', annualSalary: 1010, dateOfBirth: '15/05/1993' },
     { code: 'emp102', name: 'Rahul Ranjan', gender: 'Male', annualSalary: 1100, dateOfBirth: '17/07/1996' },
     { code: 'emp103', name: 'Rishabh Verma', gender: 'Male', annualSalary: 1200, dateOfBirth: '18/08/1996' },
