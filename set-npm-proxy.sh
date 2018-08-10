@@ -15,10 +15,10 @@ read port
 fi
 
 
-a1=`npm config set http_proxy http://$proxy:$port`
+a1=`npm config set https_proxy http://$proxy:$port`
 a2=`npm config set proxy http://$proxy:$port`
 
-b1=`npm config set http_proxy http://$username:$password@$proxy:$port`
+b1=`npm config set https_proxy http://$username:$password@$proxy:$port`
 b2=`npm config set proxy http://$username:$password@$proxy:$port`
 
 read_username() {
