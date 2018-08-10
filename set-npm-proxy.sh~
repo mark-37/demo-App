@@ -71,8 +71,8 @@ case $opt in
     read_password
     read_proxy
     echo $msg
-    echo $b1
-    echo $b2
+    $b1
+    $b2
       
     ;;
 
