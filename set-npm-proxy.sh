@@ -1,5 +1,3 @@
-echo 'Choose proxy Format...'
-
 msg='Setting up the NPM proxy...'
 
 proxy=''
@@ -11,7 +9,7 @@ if [ -z $1 ]
 then
 port=8080
 else
-read port
+port=$1
 fi
 
 
@@ -20,6 +18,10 @@ a2=`npm config set proxy http://$proxy:$port`
 
 b1=`npm config set https_proxy http://$username:$password@$proxy:$port`
 b2=`npm config set proxy http://$username:$password@$proxy:$port`
+
+sleep_2() {
+    sleep 2
+}
 
 read_username() {
  echo 'Username:'
@@ -48,10 +50,13 @@ do
 
 
 echo '****NPM proxy setup****'
-echo '1) Format = http://[proxy].[company-name].com:8080'
-echo '2) Format = http://[username]:[password]@[proxy].[company-name].com:8080'
-echo '3) Enter Manual Proxy'
-echo '4) Exit'
+echo '1) Format = http://[proxy.company-name].com:8080'
+echo '2) Format = http://[username]:[password]@[proxy.company-name].com:8080'
+echo '3) Change Port'
+echo '4) Enter Manual Proxy'
+echo '5) Exit'
+
+echo "Choose:"
 
 read  opt
 
@@ -60,10 +65,14 @@ case $opt in
 
  1)
     read_proxy
-    echo $msg
-    $a1
-    $a2
-    break
+    if [[ $proxy='' ]]; then
+        echo 'proxy cannot be left empty'
+    else
+        echo $msg
+        $a1
+        $a2
+
+    fi
     ;;
 
  2) 
@@ -76,7 +85,24 @@ case $opt in
       
     ;;
 
- 4) 
+ 3)
+    sleep_2
+    echo "Enter port";
+    read port
+    ;;
+
+4)
+    sleep 2
+    echo "****Enter the commands****";
+    read command
+    $command
+    ;;
+
+
+ 5)
+   echo "Exiting now..!";
+   sleep_2
+   echo "Bye $USER"; 
    exit 1;;
 
  *) echo 'Inavlid Choice'
@@ -91,4 +117,3 @@ done
 #npm config set https-proxy http://$proxy_host:$port
 
 echo 'Done!'
-
